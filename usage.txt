@@ -1,0 +1,12 @@
+1. install python and boto3 (developed and tested on 3.8 and 1.14.30)
+2. in the command line, navigate to the "notags" folder.
+3. run command "python tag_all.py" to run all other programs, or 
+4. enter the profile name (setup in ~/.aws/config is required), and environment tag
+5. you may be prompted to manually enter system codes if they are not automatically detected.
+
+Notes:
+1. Program can fail to tag buckets if they already have tags from CloudFormation -- an error message will be shown and the bucket will be skipped.
+2. EBS volumes that are neither encrypted nor in use will be skipped
+3. Unencrypted EBS snapshots will be skipped
+4. VPC Endpoints should all be tagged the same, so instead of checking whether or not they are already tagged the program simply re-tags everything.
+
